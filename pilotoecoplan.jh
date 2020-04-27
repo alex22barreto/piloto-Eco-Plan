@@ -1,0 +1,51 @@
+entity TipoProyecto {
+	idTipoProyecto Integer,
+    nombreTipoProyecto String
+}
+
+entity TipoActividad {
+	idTipoActividad Integer,
+    nombreTipoActividad String
+}
+
+entity Estado {
+	idTipoEstado Integer,
+    nombreTipoEstado String
+}
+
+
+entity Persona {
+	idPersona Integer,
+    identificacion Integer,
+    nombre String,
+    apellido String
+}
+
+
+entity Empresa {
+	tipoIdent String, 
+    identificacion String, 
+    razonSocial String, 
+    celular Integer, 
+    email String, 
+    personaContacto Integer
+}
+entity Proyecto {
+	codigo Integer, 
+    nombre String
+}
+entity Actividades {
+	codigo Integer, 
+    nombre String, 
+    fecInicio Instant, 
+    fecFin Instant, 
+    conProveedor Boolean
+}
+
+relationship OneToMany {
+	Estado to Actividades{estado},
+	Estado to Proyecto{estado},
+    Persona to Empresa{personaContacto},
+    TipoProyecto to Proyecto{tipo},
+    TipoActividad to Actividades{tipo}
+}
