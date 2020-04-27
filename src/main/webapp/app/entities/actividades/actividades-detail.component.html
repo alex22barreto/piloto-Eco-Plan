@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="actividades">
+            <h2><span jhiTranslate="ecoplanApp.actividades.detail.title">Actividades</span> {{ actividades.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ecoplanApp.actividades.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{ actividades.codigo }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ actividades.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.fecInicio">Fec Inicio</span></dt>
+                <dd>
+                    <span>{{ actividades.fecInicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.fecFin">Fec Fin</span></dt>
+                <dd>
+                    <span>{{ actividades.fecFin }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.conProveedor">Con Proveedor</span></dt>
+                <dd>
+                    <span>{{ actividades.conProveedor }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.estado">Estado</span></dt>
+                <dd>
+                    <div *ngIf="actividades.estado">
+                        <a [routerLink]="['/estado', actividades.estado?.id, 'view']">{{ actividades.estado?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividades.tipo">Tipo</span></dt>
+                <dd>
+                    <div *ngIf="actividades.tipo">
+                        <a [routerLink]="['/tipo-actividad', actividades.tipo?.id, 'view']">{{ actividades.tipo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/actividades', actividades.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

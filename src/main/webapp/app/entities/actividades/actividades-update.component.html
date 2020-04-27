@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-actividades-heading" jhiTranslate="ecoplanApp.actividades.home.createOrEditLabel">Create or edit a Actividades</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.codigo" for="field_codigo">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" id="field_codigo"
+                           formControlName="codigo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.fecInicio" for="field_fecInicio">Fec Inicio</label>
+                    <div class="d-flex">
+                        <input id="field_fecInicio" type="datetime-local" class="form-control" name="fecInicio" formControlName="fecInicio" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.fecFin" for="field_fecFin">Fec Fin</label>
+                    <div class="d-flex">
+                        <input id="field_fecFin" type="datetime-local" class="form-control" name="fecFin" formControlName="fecFin" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.conProveedor" for="field_conProveedor">Con Proveedor</label>
+                    <input type="checkbox" class="form-control" name="conProveedor" id="field_conProveedor"
+                           formControlName="conProveedor"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.estado" for="field_estado">Estado</label>
+                    <select class="form-control" id="field_estado" name="estado" formControlName="estado">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="estadoOption.id === editForm.get('estado')!.value?.id ? editForm.get('estado')!.value : estadoOption" *ngFor="let estadoOption of estados; trackBy: trackById">{{ estadoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.actividades.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" id="field_tipo" name="tipo" formControlName="tipo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoActividadOption.id === editForm.get('tipo')!.value?.id ? editForm.get('tipo')!.value : tipoActividadOption" *ngFor="let tipoActividadOption of tipoactividads; trackBy: trackById">{{ tipoActividadOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

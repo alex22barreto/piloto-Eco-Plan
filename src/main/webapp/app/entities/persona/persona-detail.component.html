@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="persona">
+            <h2><span jhiTranslate="ecoplanApp.persona.detail.title">Persona</span> {{ persona.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ecoplanApp.persona.idPersona">Id Persona</span></dt>
+                <dd>
+                    <span>{{ persona.idPersona }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.persona.identificacion">Identificacion</span></dt>
+                <dd>
+                    <span>{{ persona.identificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.persona.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ persona.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.persona.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{ persona.apellido }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/persona', persona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

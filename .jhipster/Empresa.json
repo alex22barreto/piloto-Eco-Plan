@@ -1,0 +1,49 @@
+{
+    "name": "Empresa",
+    "fields": [
+        {
+            "fieldName": "tipoIdent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identificacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "razonSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "personaContacto",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "persona",
+            "otherEntityRelationshipName": "empresa",
+            "relationshipName": "personaContacto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200427235000",
+    "entityTableName": "empresa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

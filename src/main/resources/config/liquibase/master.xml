@@ -14,6 +14,16 @@
     <property name="uuidType" value="uuid" dbms="h2, mssql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427234600_added_entity_TipoProyecto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427234700_added_entity_TipoActividad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427234800_added_entity_Estado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427234900_added_entity_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427235000_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427235100_added_entity_Proyecto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427235200_added_entity_Actividades.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200427235000_added_entity_constraints_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427235100_added_entity_constraints_Proyecto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200427235200_added_entity_constraints_Actividades.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

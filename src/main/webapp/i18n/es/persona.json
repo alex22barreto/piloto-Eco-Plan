@@ -1,0 +1,26 @@
+{
+  "ecoplanApp": {
+    "persona": {
+      "home": {
+        "title": "Personas",
+        "createLabel": "Crear nuevo Persona",
+        "createOrEditLabel": "Crear o editar Persona",
+        "notFound": "Ningún Personas encontrado"
+      },
+      "created": "Un nuevo Persona ha sido creado con el identificador {{ param }}",
+      "updated": "Un Persona ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Persona ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Persona {{ id }}?"
+      },
+      "detail": {
+        "title": "Persona"
+      },
+      "idPersona": "Id Persona",
+      "identificacion": "Identificacion",
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "empresa": "Empresa"
+    }
+  }
+}

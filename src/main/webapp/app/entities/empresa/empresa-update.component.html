@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-empresa-heading" jhiTranslate="ecoplanApp.empresa.home.createOrEditLabel">Create or edit a Empresa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.tipoIdent" for="field_tipoIdent">Tipo Ident</label>
+                    <input type="text" class="form-control" name="tipoIdent" id="field_tipoIdent"
+                           formControlName="tipoIdent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.identificacion" for="field_identificacion">Identificacion</label>
+                    <input type="text" class="form-control" name="identificacion" id="field_identificacion"
+                           formControlName="identificacion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.razonSocial" for="field_razonSocial">Razon Social</label>
+                    <input type="text" class="form-control" name="razonSocial" id="field_razonSocial"
+                           formControlName="razonSocial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.celular" for="field_celular">Celular</label>
+                    <input type="number" class="form-control" name="celular" id="field_celular"
+                           formControlName="celular"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.personaContacto" for="field_personaContacto">Persona Contacto</label>
+                    <input type="number" class="form-control" name="personaContacto" id="field_personaContacto"
+                           formControlName="personaContacto"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.personaContacto" for="field_personaContacto">Persona Contacto</label>
+                    <select class="form-control" id="field_personaContacto" name="personaContacto" formControlName="personaContacto">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personaOption.id === editForm.get('personaContacto')!.value?.id ? editForm.get('personaContacto')!.value : personaOption" *ngFor="let personaOption of personas; trackBy: trackById">{{ personaOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

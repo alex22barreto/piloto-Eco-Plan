@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "tipoProyecto": "Tipo Proyecto",
+        "tipoActividad": "Tipo Actividad",
+        "estado": "Estado",
+        "persona": "Persona",
+        "empresa": "Empresa",
+        "proyecto": "Proyecto",
+        "actividades": "Actividades",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

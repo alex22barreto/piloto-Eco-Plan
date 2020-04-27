@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoProyecto">
+            <h2><span jhiTranslate="ecoplanApp.tipoProyecto.detail.title">Tipo Proyecto</span> {{ tipoProyecto.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ecoplanApp.tipoProyecto.idTipoProyecto">Id Tipo Proyecto</span></dt>
+                <dd>
+                    <span>{{ tipoProyecto.idTipoProyecto }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.tipoProyecto.nombreTipoProyecto">Nombre Tipo Proyecto</span></dt>
+                <dd>
+                    <span>{{ tipoProyecto.nombreTipoProyecto }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-proyecto', tipoProyecto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

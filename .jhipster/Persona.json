@@ -1,0 +1,40 @@
+{
+    "name": "Persona",
+    "fields": [
+        {
+            "fieldName": "idPersona",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "identificacion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "personaContacto",
+            "relationshipName": "empresa"
+        }
+    ],
+    "changelogDate": "20200427234900",
+    "entityTableName": "persona",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

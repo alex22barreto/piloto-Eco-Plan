@@ -1,0 +1,28 @@
+{
+  "ecoplanApp": {
+    "actividades": {
+      "home": {
+        "title": "Actividades",
+        "createLabel": "Create a new Actividades",
+        "createOrEditLabel": "Create or edit a Actividades",
+        "notFound": "No Actividades found"
+      },
+      "created": "A new Actividades is created with identifier {{ param }}",
+      "updated": "A Actividades is updated with identifier {{ param }}",
+      "deleted": "A Actividades is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Actividades {{ id }}?"
+      },
+      "detail": {
+        "title": "Actividades"
+      },
+      "codigo": "Codigo",
+      "nombre": "Nombre",
+      "fecInicio": "Fec Inicio",
+      "fecFin": "Fec Fin",
+      "conProveedor": "Con Proveedor",
+      "estado": "Estado",
+      "tipo": "Tipo"
+    }
+  }
+}

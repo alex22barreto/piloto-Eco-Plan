@@ -1,0 +1,24 @@
+{
+  "ecoplanApp": {
+    "tipoProyecto": {
+      "home": {
+        "title": "Tipo Proyectos",
+        "createLabel": "Crear nuevo Tipo Proyecto",
+        "createOrEditLabel": "Crear o editar Tipo Proyecto",
+        "notFound": "Ningún Tipo Proyectos encontrado"
+      },
+      "created": "Un nuevo Tipo Proyecto ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo Proyecto ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo Proyecto ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo Proyecto {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Proyecto"
+      },
+      "idTipoProyecto": "Id Tipo Proyecto",
+      "nombreTipoProyecto": "Nombre Tipo Proyecto",
+      "proyecto": "Proyecto"
+    }
+  }
+}
