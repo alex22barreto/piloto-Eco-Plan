@@ -1,0 +1,45 @@
+{
+    "name": "Actividades",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fecFin",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conProveedor",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200428011900",
+    "entityTableName": "actividades",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

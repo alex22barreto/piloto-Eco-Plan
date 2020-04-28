@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empresa">
+            <h2><span jhiTranslate="ecoplanApp.empresa.detail.title">Empresa</span> {{ empresa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ecoplanApp.empresa.tipoIdent">Tipo Ident</span></dt>
+                <dd>
+                    <span>{{ empresa.tipoIdent }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.empresa.identificacion">Identificacion</span></dt>
+                <dd>
+                    <span>{{ empresa.identificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.empresa.razonSocial">Razon Social</span></dt>
+                <dd>
+                    <span>{{ empresa.razonSocial }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.empresa.celular">Celular</span></dt>
+                <dd>
+                    <span>{{ empresa.celular }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.empresa.email">Email</span></dt>
+                <dd>
+                    <span>{{ empresa.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.empresa.personaContacto">Persona Contacto</span></dt>
+                <dd>
+                    <span>{{ empresa.personaContacto }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empresa', empresa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
