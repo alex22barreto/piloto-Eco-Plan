@@ -40,6 +40,9 @@ public class CacheConfiguration {
             createCache(cm, com.ecoplan.app.domain.User.class.getName());
             createCache(cm, com.ecoplan.app.domain.Authority.class.getName());
             createCache(cm, com.ecoplan.app.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ecoplan.app.domain.Empresa.class.getName());
+            createCache(cm, com.ecoplan.app.domain.Proyecto.class.getName());
+            createCache(cm, com.ecoplan.app.domain.Actividades.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
