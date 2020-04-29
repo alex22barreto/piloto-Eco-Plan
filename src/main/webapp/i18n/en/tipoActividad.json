@@ -1,0 +1,23 @@
+{
+  "ecoplanApp": {
+    "tipoActividad": {
+      "home": {
+        "title": "Tipo Actividads",
+        "createLabel": "Create a new Tipo Actividad",
+        "createOrEditLabel": "Create or edit a Tipo Actividad",
+        "notFound": "No Tipo Actividads found"
+      },
+      "created": "A new Tipo Actividad is created with identifier {{ param }}",
+      "updated": "A Tipo Actividad is updated with identifier {{ param }}",
+      "deleted": "A Tipo Actividad is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Actividad {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Actividad"
+      },
+      "nombreTipoActividad": "Nombre Tipo Actividad",
+      "actividad": "Actividad"
+    }
+  }
+}

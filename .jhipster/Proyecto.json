@@ -1,0 +1,60 @@
+{
+    "name": "Proyecto",
+    "fields": [
+        {
+            "fieldName": "codigoProyecto",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "actividad",
+            "otherEntityRelationshipName": "proyecto",
+            "relationshipName": "actividad"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "proyecto",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoProyecto",
+            "otherEntityRelationshipName": "proyecto",
+            "relationshipName": "tipoProyecto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estado",
+            "otherEntityRelationshipName": "proyecto",
+            "relationshipName": "estado",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200429194200",
+    "entityTableName": "proyecto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

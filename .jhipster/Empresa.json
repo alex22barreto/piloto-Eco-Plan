@@ -1,0 +1,60 @@
+{
+    "name": "Empresa",
+    "fields": [
+        {
+            "fieldName": "tipoIdent",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "identificacionEmpresa",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "razonSocial",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "proyecto",
+            "otherEntityRelationshipName": "empresa",
+            "relationshipName": "proyecto"
+        }
+    ],
+    "changelogDate": "20200429194100",
+    "entityTableName": "empresa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

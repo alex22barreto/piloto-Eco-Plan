@@ -1,0 +1,75 @@
+{
+    "name": "Actividad",
+    "fields": [
+        {
+            "fieldName": "codigoActividad",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fecInicio",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fecFin",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "conProveedor",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proyecto",
+            "otherEntityRelationshipName": "actividad",
+            "relationshipName": "proyecto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoActividad",
+            "otherEntityRelationshipName": "actividad",
+            "relationshipName": "tipoActividad",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estado",
+            "otherEntityRelationshipName": "actividad",
+            "relationshipName": "estado",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200429194300",
+    "entityTableName": "actividad",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

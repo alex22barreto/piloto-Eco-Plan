@@ -1,0 +1,32 @@
+{
+    "name": "TipoProyecto",
+    "fields": [
+        {
+            "fieldName": "nombreTipoProyecto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "proyecto",
+            "otherEntityRelationshipName": "tipoProyecto",
+            "relationshipName": "proyecto"
+        }
+    ],
+    "changelogDate": "20200429193800",
+    "entityTableName": "tipo_proyecto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

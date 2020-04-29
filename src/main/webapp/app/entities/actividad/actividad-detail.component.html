@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="actividad">
+            <h2><span jhiTranslate="ecoplanApp.actividad.detail.title">Actividad</span> {{ actividad.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ecoplanApp.actividad.codigoActividad">Codigo Actividad</span></dt>
+                <dd>
+                    <span>{{ actividad.codigoActividad }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{ actividad.nombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.fecInicio">Fec Inicio</span></dt>
+                <dd>
+                    <span>{{ actividad.fecInicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.fecFin">Fec Fin</span></dt>
+                <dd>
+                    <span>{{ actividad.fecFin }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.conProveedor">Con Proveedor</span></dt>
+                <dd>
+                    <span>{{ actividad.conProveedor }}</span>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.proyecto">Proyecto</span></dt>
+                <dd>
+                    <div *ngIf="actividad.proyecto">
+                        <a [routerLink]="['/proyecto', actividad.proyecto?.id, 'view']">{{ actividad.proyecto?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.tipoActividad">Tipo Actividad</span></dt>
+                <dd>
+                    <div *ngIf="actividad.tipoActividad">
+                        <a [routerLink]="['/tipo-actividad', actividad.tipoActividad?.id, 'view']">{{ actividad.tipoActividad?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ecoplanApp.actividad.estado">Estado</span></dt>
+                <dd>
+                    <div *ngIf="actividad.estado">
+                        <a [routerLink]="['/estado', actividad.estado?.id, 'view']">{{ actividad.estado?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/actividad', actividad.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

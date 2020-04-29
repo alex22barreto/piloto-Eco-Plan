@@ -1,0 +1,32 @@
+{
+    "name": "TipoActividad",
+    "fields": [
+        {
+            "fieldName": "nombreTipoActividad",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "actividad",
+            "otherEntityRelationshipName": "tipoActividad",
+            "relationshipName": "actividad"
+        }
+    ],
+    "changelogDate": "20200429193900",
+    "entityTableName": "tipo_actividad",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

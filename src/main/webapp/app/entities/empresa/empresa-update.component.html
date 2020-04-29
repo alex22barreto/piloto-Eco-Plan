@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-empresa-heading" jhiTranslate="ecoplanApp.empresa.home.createOrEditLabel">Create or edit a Empresa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.tipoIdent" for="field_tipoIdent">Tipo Ident</label>
+                    <input type="text" class="form-control" name="tipoIdent" id="field_tipoIdent"
+                           formControlName="tipoIdent"/>
+                    <div *ngIf="editForm.get('tipoIdent')!.invalid && (editForm.get('tipoIdent')!.dirty || editForm.get('tipoIdent')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tipoIdent')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.identificacionEmpresa" for="field_identificacionEmpresa">Identificacion Empresa</label>
+                    <input type="text" class="form-control" name="identificacionEmpresa" id="field_identificacionEmpresa"
+                           formControlName="identificacionEmpresa"/>
+                    <div *ngIf="editForm.get('identificacionEmpresa')!.invalid && (editForm.get('identificacionEmpresa')!.dirty || editForm.get('identificacionEmpresa')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('identificacionEmpresa')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.razonSocial" for="field_razonSocial">Razon Social</label>
+                    <input type="text" class="form-control" name="razonSocial" id="field_razonSocial"
+                           formControlName="razonSocial"/>
+                    <div *ngIf="editForm.get('razonSocial')!.invalid && (editForm.get('razonSocial')!.dirty || editForm.get('razonSocial')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('razonSocial')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.celular" for="field_celular">Celular</label>
+                    <input type="number" class="form-control" name="celular" id="field_celular"
+                           formControlName="celular"/>
+                    <div *ngIf="editForm.get('celular')!.invalid && (editForm.get('celular')!.dirty || editForm.get('celular')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('celular')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('celular')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.empresa.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                    <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('email')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

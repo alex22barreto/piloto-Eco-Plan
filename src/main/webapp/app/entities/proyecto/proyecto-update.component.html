@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-proyecto-heading" jhiTranslate="ecoplanApp.proyecto.home.createOrEditLabel">Create or edit a Proyecto</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.codigoProyecto" for="field_codigoProyecto">Codigo Proyecto</label>
+                    <input type="number" class="form-control" name="codigoProyecto" id="field_codigoProyecto"
+                           formControlName="codigoProyecto"/>
+                    <div *ngIf="editForm.get('codigoProyecto')!.invalid && (editForm.get('codigoProyecto')!.dirty || editForm.get('codigoProyecto')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('codigoProyecto')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('codigoProyecto')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.nombre" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                    <div *ngIf="editForm.get('nombre')!.invalid && (editForm.get('nombre')!.dirty || editForm.get('nombre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nombre')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{ empresaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.tipoProyecto" for="field_tipoProyecto">Tipo Proyecto</label>
+                    <select class="form-control" id="field_tipoProyecto" name="tipoProyecto" formControlName="tipoProyecto">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoProyectoOption.id === editForm.get('tipoProyecto')!.value?.id ? editForm.get('tipoProyecto')!.value : tipoProyectoOption" *ngFor="let tipoProyectoOption of tipoproyectos; trackBy: trackById">{{ tipoProyectoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.estado" for="field_estado">Estado</label>
+                    <select class="form-control" id="field_estado" name="estado" formControlName="estado">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="estadoOption.id === editForm.get('estado')!.value?.id ? editForm.get('estado')!.value : estadoOption" *ngFor="let estadoOption of estados; trackBy: trackById">{{ estadoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

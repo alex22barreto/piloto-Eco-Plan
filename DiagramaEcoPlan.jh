@@ -1,0 +1,44 @@
+entity TipoProyecto {
+	ID Integer required,
+	nombreTipoProyecto String unique required 
+}
+entity TipoActividad {
+	ID Integer required,
+	nombreTipoActividad String unique required
+}
+entity Estado {
+	ID Integer required,
+	estadoNombre String unique required
+}
+entity Empresa {
+	ID Integer required,
+	tipoIdent String required, 
+    identificacionEmpresa String unique required, 
+    razonSocial String required,     
+    celular Integer required, 
+    email String required
+}
+entity Proyecto {
+	ID Integer required,
+	codigoProyecto Integer unique required, 
+    nombre String required
+}
+entity Actividad {
+	ID Integer required,
+	codigoActividad Integer unique required , 
+    nombre String required, 
+    fecInicio Instant required, 
+    fecFin Instant required
+    conProveedor Boolean required
+}
+
+relationship OneToMany {
+  Empresa{proyecto} to Proyecto{empresa},
+  TipoProyecto{proyecto} to Proyecto{tipoProyecto},
+  Estado{proyecto} to Proyecto{estado},
+  Proyecto{actividad} to Actividad{proyecto},
+  TipoActividad{actividad} to Actividad{tipoActividad},
+  Estado{actividad} to Actividad{estado},
+}
+
+

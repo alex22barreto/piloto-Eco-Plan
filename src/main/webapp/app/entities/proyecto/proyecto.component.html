@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ecoplanApp.proyecto.home.title">Proyectos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-proyecto" [routerLink]="['/proyecto/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="ecoplanApp.proyecto.home.createLabel">
+            Create a new Proyecto
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="proyectos?.length === 0">
+        <span jhiTranslate="ecoplanApp.proyecto.home.notFound">No proyectos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="proyectos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.proyecto.codigoProyecto">Codigo Proyecto</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.proyecto.nombre">Nombre</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.proyecto.empresa">Empresa</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.proyecto.tipoProyecto">Tipo Proyecto</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.proyecto.estado">Estado</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proyecto of proyectos ;trackBy: trackId">
+                    <td><a [routerLink]="['/proyecto', proyecto.id, 'view']">{{ proyecto.id }}</a></td>
+                    <td>{{ proyecto.codigoProyecto }}</td>
+                    <td>{{ proyecto.nombre }}</td>
+                    <td>
+                        <div *ngIf="proyecto.empresa">
+                            <a [routerLink]="['/empresa', proyecto.empresa?.id, 'view']" >{{ proyecto.empresa?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="proyecto.tipoProyecto">
+                            <a [routerLink]="['/tipo-proyecto', proyecto.tipoProyecto?.id, 'view']" >{{ proyecto.tipoProyecto?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="proyecto.estado">
+                            <a [routerLink]="['/estado', proyecto.estado?.id, 'view']" >{{ proyecto.estado?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/proyecto', proyecto.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/proyecto', proyecto.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(proyecto)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

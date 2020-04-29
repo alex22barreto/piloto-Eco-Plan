@@ -1,0 +1,38 @@
+{
+    "name": "Estado",
+    "fields": [
+        {
+            "fieldName": "estadoNombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "proyecto",
+            "otherEntityRelationshipName": "estado",
+            "relationshipName": "proyecto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "actividad",
+            "otherEntityRelationshipName": "estado",
+            "relationshipName": "actividad"
+        }
+    ],
+    "changelogDate": "20200429194000",
+    "entityTableName": "estado",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

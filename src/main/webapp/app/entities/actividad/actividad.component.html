@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ecoplanApp.actividad.home.title">Actividads</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-actividad" [routerLink]="['/actividad/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="ecoplanApp.actividad.home.createLabel">
+            Create a new Actividad
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="actividads?.length === 0">
+        <span jhiTranslate="ecoplanApp.actividad.home.notFound">No actividads found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="actividads?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.codigoActividad">Codigo Actividad</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.nombre">Nombre</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.fecInicio">Fec Inicio</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.fecFin">Fec Fin</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.conProveedor">Con Proveedor</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.proyecto">Proyecto</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.tipoActividad">Tipo Actividad</span></th>
+                    <th scope="col" ><span jhiTranslate="ecoplanApp.actividad.estado">Estado</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let actividad of actividads ;trackBy: trackId">
+                    <td><a [routerLink]="['/actividad', actividad.id, 'view']">{{ actividad.id }}</a></td>
+                    <td>{{ actividad.codigoActividad }}</td>
+                    <td>{{ actividad.nombre }}</td>
+                    <td>{{ actividad.fecInicio | date:'medium' }}</td>
+                    <td>{{ actividad.fecFin | date:'medium' }}</td>
+                    <td>{{ actividad.conProveedor }}</td>
+                    <td>
+                        <div *ngIf="actividad.proyecto">
+                            <a [routerLink]="['/proyecto', actividad.proyecto?.id, 'view']" >{{ actividad.proyecto?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="actividad.tipoActividad">
+                            <a [routerLink]="['/tipo-actividad', actividad.tipoActividad?.id, 'view']" >{{ actividad.tipoActividad?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="actividad.estado">
+                            <a [routerLink]="['/estado', actividad.estado?.id, 'view']" >{{ actividad.estado?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/actividad', actividad.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/actividad', actividad.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(actividad)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
