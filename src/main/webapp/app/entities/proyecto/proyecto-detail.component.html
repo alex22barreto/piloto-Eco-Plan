@@ -19,19 +19,19 @@
                 <dt><span jhiTranslate="ecoplanApp.proyecto.empresa">Empresa</span></dt>
                 <dd>
                     <div *ngIf="proyecto.empresa">
-                        <a [routerLink]="['/empresa', proyecto.empresa?.id, 'view']">{{ proyecto.empresa?.id }}</a>
+                        <a [routerLink]="['/empresa', proyecto.empresa?.razonSocial, 'view']">{{ proyecto.empresa?.razonSocial }}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="ecoplanApp.proyecto.tipoProyecto">Tipo Proyecto</span></dt>
                 <dd>
                     <div *ngIf="proyecto.tipoProyecto">
-                        <a [routerLink]="['/tipo-proyecto', proyecto.tipoProyecto?.id, 'view']">{{ proyecto.tipoProyecto?.id }}</a>
+                        <a [routerLink]="['/tipo-proyecto', proyecto.tipoProyecto?.nombreTipoProyecto, 'view']">{{ proyecto.tipoProyecto?.nombreTipoProyecto }}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="ecoplanApp.proyecto.estado">Estado</span></dt>
                 <dd>
                     <div *ngIf="proyecto.estado">
-                        <a [routerLink]="['/estado', proyecto.estado?.id, 'view']">{{ proyecto.estado?.id }}</a>
+                        <a [routerLink]="['/estado', proyecto.estado?.estadoNombre, 'view']">{{ proyecto.estado?.estadoNombre }}</a>
                     </div>
                 </dd>
             </dl>

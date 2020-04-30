@@ -43,7 +43,7 @@
                     <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.empresa" for="field_empresa">Empresa</label>
                     <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{ empresaOption.id }}</option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{ empresaOption.razonSocial }}</option>
                     </select>
                 </div>
 
@@ -51,7 +51,7 @@
                     <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.tipoProyecto" for="field_tipoProyecto">Tipo Proyecto</label>
                     <select class="form-control" id="field_tipoProyecto" name="tipoProyecto" formControlName="tipoProyecto">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="tipoProyectoOption.id === editForm.get('tipoProyecto')!.value?.id ? editForm.get('tipoProyecto')!.value : tipoProyectoOption" *ngFor="let tipoProyectoOption of tipoproyectos; trackBy: trackById">{{ tipoProyectoOption.id }}</option>
+                        <option [ngValue]="tipoProyectoOption.id === editForm.get('tipoProyecto')!.value?.id ? editForm.get('tipoProyecto')!.value : tipoProyectoOption" *ngFor="let tipoProyectoOption of tipoproyectos; trackBy: trackById">{{ tipoProyectoOption.nombreTipoProyecto }}</option>
                     </select>
                 </div>
 
@@ -59,7 +59,7 @@
                     <label class="form-control-label" jhiTranslate="ecoplanApp.proyecto.estado" for="field_estado">Estado</label>
                     <select class="form-control" id="field_estado" name="estado" formControlName="estado">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="estadoOption.id === editForm.get('estado')!.value?.id ? editForm.get('estado')!.value : estadoOption" *ngFor="let estadoOption of estados; trackBy: trackById">{{ estadoOption.id }}</option>
+                        <option [ngValue]="estadoOption.id === editForm.get('estado')!.value?.id ? editForm.get('estado')!.value : estadoOption" *ngFor="let estadoOption of estados; trackBy: trackById">{{ estadoOption.estadoNombre }}</option>
                     </select>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import { EcoplanCoreModule } from 'app/core/core.module';
 import { EcoplanAppRoutingModule } from './app-routing.module';
 import { EcoplanHomeModule } from './home/home.module';
 import { EcoplanEntityModule } from './entities/entity.module';
+import { EcoplanVistaProyectosModule } from './vista-proyectos/vista-proyectos.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -21,6 +22,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     EcoplanSharedModule,
     EcoplanCoreModule,
     EcoplanHomeModule,
+    EcoplanVistaProyectosModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     EcoplanEntityModule,
     EcoplanAppRoutingModule
