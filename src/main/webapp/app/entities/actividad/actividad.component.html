@@ -44,17 +44,17 @@
                     <td>{{ actividad.conProveedor }}</td>
                     <td>
                         <div *ngIf="actividad.proyecto">
-                            <a [routerLink]="['/proyecto', actividad.proyecto?.id, 'view']" >{{ actividad.proyecto?.id }}</a>
+                            <a [routerLink]="['/proyecto', actividad.proyecto?.id, 'view']" >{{ actividad.proyecto?.nombre }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="actividad.tipoActividad">
-                            <a [routerLink]="['/tipo-actividad', actividad.tipoActividad?.id, 'view']" >{{ actividad.tipoActividad?.id }}</a>
+                            <a [routerLink]="['/tipo-actividad', actividad.tipoActividad?.id, 'view']" >{{ actividad.tipoActividad?.nombreTipoActividad }}</a>
                         </div>
                     </td>
                     <td>
                         <div *ngIf="actividad.estado">
-                            <a [routerLink]="['/estado', actividad.estado?.id, 'view']" >{{ actividad.estado?.id }}</a>
+                            <a [routerLink]="['/estado', actividad.estado?.id, 'view']" >{{ actividad.estado?.estadoNombre }}</a>
                         </div>
                     </td>
                     <td class="text-right">

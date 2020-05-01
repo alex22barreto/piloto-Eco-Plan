@@ -1,1 +1,83 @@
-<p>targeta-proyectos works!</p>
+<div class="row">
+
+
+ <div class="col-lg-3 col-md-4 mb-3" *ngFor="let proyecto of proyectos ;trackBy: trackId">
+
+    <div class="card">
+      <div class="view overlay">
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(75).jpg" class="card-img-top"
+          alt="">
+        <a href="#">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">
+            <a [routerLink]="['/proyecto', proyecto.id, 'view']" >{{ proyecto.nombre }}</a>
+        </h4>
+        <p class="card-text">{{ proyecto.codigoProyecto }}
+          <br>
+          {{ proyecto.empresa?.razonSocial }}
+          <br>
+          {{ proyecto.tipoProyecto?.nombreTipoProyecto }}
+        </p>
+      </div>
+    </div>
+    
+
+  </div>
+  <!--Grid column-->
+</div>
+
+
+<!--
+<div class="row">
+    <div class="col-md-6 col-xl-3">
+        
+        <div class="card d-block">
+            <div class="card-body">
+                <div class="dropdown card-widgets">
+                    <a href="" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false">
+                        <i class="dripicons-dots-3"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        
+                        <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-pencil mr-1"></i>Edit</a>
+                        
+                        <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-delete mr-1"></i>Delete</a>
+                        
+                        <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-email-outline mr-1"></i>Invite</a>
+                        
+                        <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-exit-to-app mr-1"></i>Leave</a>
+                    </div>
+                </div>
+                
+                <h4 class="mt-0">
+                    <a href="" class="text-title">App design and development</a>
+                </h4>
+                <div class="badge badge-success mb-3">Finished</div>
+
+                <p class="text-muted font-13 mb-3">With supporting text below as a natural lead-in to additional contenposuere erat a ante...<a href="javascript:void(0);" class="font-weight-bold text-muted">view more</a>
+                </p>
+
+                
+                <p class="mb-1">
+                    <span class="pr-2 text-nowrap mb-2 d-inline-block">
+                        <i class="mdi mdi-format-list-bulleted-type text-muted"></i>
+                        <b>21</b> Tasks
+                    </span>
+                    <span class="text-nowrap mb-2 d-inline-block">
+                        <i class="mdi mdi-comment-multiple-outline text-muted"></i>
+                        <b>741</b> Comments
+                    </span>
+                </p>
+                <div>
+                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mat Helme" class="d-inline-block">
+                        <img src="" class="rounded-circle avatar-xs" alt="friend">
+                    </a>
+                </div>
+            </div> 
+        </div> 
+    </div> 
+</div>
+ -->
