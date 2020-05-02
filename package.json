@@ -8,6 +8,7 @@
     "node_modules"
   ],
   "dependencies": {
+    "@angular/animations": "^9.1.4",
     "@angular/common": "9.0.4",
     "@angular/compiler": "9.0.4",
     "@angular/core": "9.0.4",
@@ -22,10 +23,12 @@
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
+    "angular-gantt-chart": "^1.2.0",
     "bootstrap": "4.4.1",
     "mdbootstrap": "^4.17.0",
     "moment": "2.24.0",
     "ng-jhipster": "0.12.0",
+    "ngx-beautiful-charts": "^2.0.4",
     "ngx-cookie": "4.0.2",
     "ngx-infinite-scroll": "8.0.1",
     "ngx-webstorage": "5.0.0",
